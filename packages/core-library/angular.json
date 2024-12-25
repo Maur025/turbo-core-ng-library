@@ -1,0 +1,53 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "@maur025/core-models": {
+      "projectType": "library",
+      "root": "projects/maur025/core-models",
+      "sourceRoot": "projects/maur025/core-models/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/maur025/core-models/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/maur025/core-models/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/maur025/core-models/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      }
+    },
+    "@maur025/core-keycloak": {
+      "projectType": "library",
+      "root": "projects/maur025/core-keycloak",
+      "sourceRoot": "projects/maur025/core-keycloak/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/maur025/core-keycloak/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/maur025/core-keycloak/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/maur025/core-keycloak/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      }
+    }
+  }
+}
